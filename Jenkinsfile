@@ -3,9 +3,25 @@ pipeline {
     agent any
     
     stages {
-         stage('build') {
+         stage('install') {
           steps {
               sh 'npm install'
+            }
+          }
+          stage('build') {
+          steps {
+              sh 'npm run build'
+            }
+          }
+        
+        stage('test') {
+          steps {
+              sh 'npm test'
+            }
+          }
+          stage('Docker Image') {
+          steps {
+              sh 'docker build -t SCDLABTASK'
             }
           }
         
@@ -13,13 +29,6 @@ pipeline {
             steps {
                
                     sh "docker compose up"
-                
-            }
-        }
-         stage('kill') {
-            steps {
-               
-                    sh "docker compose down"
                 
             }
         }
