@@ -14,13 +14,7 @@ pipeline {
             }
           }
         
-       
-          stage('Docker Image') {
-          steps {
-              sh 'docker build -t SCDLABTASK'
-            }
-          }
-        
+      
         stage('Docker Comopse Up') {
             steps {
                
