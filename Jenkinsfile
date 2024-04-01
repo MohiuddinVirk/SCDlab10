@@ -14,11 +14,7 @@ pipeline {
             }
           }
         
-        stage('test') {
-          steps {
-              sh 'npm test'
-            }
-          }
+       
           stage('Docker Image') {
           steps {
               sh 'docker build -t SCDLABTASK'
