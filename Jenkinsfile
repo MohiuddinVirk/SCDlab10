@@ -18,7 +18,7 @@ pipeline {
         stage('Docker Comopse Up') {
             steps {
                
-                    sh "sudo docker compose up"
+                    sh "docker compose up"
                 
             }
         }
