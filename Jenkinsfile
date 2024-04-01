@@ -8,9 +8,9 @@ pipeline {
               sh 'npm install'
             }
           }
-          stage('build') {
+          stage('start') {
           steps {
-              sh 'npm run build'
+              sh 'npm start'
             }
           }
         
